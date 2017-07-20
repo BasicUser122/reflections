@@ -1,0 +1,72 @@
+-Na lesson 1 aprendi um pouco sobre o cmd:
+aprendi a abrir programas por lá, e aprendi que se o caminho não estiver no path, ele não pode ser aberto pelo cmd(ou pelo menos não de forma tão facil)
+posso editar o patch pelo console usando o comando sysdm.cpl para ir até a interface ou pelo próprio cmd
+com o CD eu navego para pastas Ex: dir Documents
+com o MKDIR eu crio pastar na pasta que estou no momento Ex: mkdir NovaPasta
+com o START posso abrir um programa desde que ele esteja na Path Ex: start notepad (tem que ser o nome do exe, no caso do Sublime pode ser subl ou sublime_text, porque tem os 2 exes), e acho que da pra abrir sem o START, usando o nome direto
+-Sobre controle de versão:
+por hora me parece bom pra ter mais controle dos arquivos, criar e atualizar apps de maneira gradual
+algumas ferramentas como Dropbox, Google Docs, SVN, GIT e Wikipedia salvam versões anteriores de forma automática, o controle também pode ser feito salvando manualmente
+GIT e SVN são as melhores, entre as anteriores, para programação. GIT tem a vantagem de poder ser usada offline
+-Sobre a comparação de arquivos
+o sistema de comparação de arquivos parece muito bom para encontrar bugs
+por hora aprendi a comparação no CMD usando >FC arquivo_1 arquivo_2 (Isso me mostra a diferença entre os 2, precisam estar na mesma pasta os arquivos e o dir CMD)
+-Sobre GIT
+o GIT tem commits, que são as diferentes versões do mesmo arquivo
+é possivel ver a lista de commits pelo ?cmd?bash? usando GIT LOG (tenho que verificar isso tudo para cmd e Windows)
+os commits aparecem em ordem Novos->antigos, eles tem um ID, um autor, uma data e uma mensagem.(a mensagem deve dizer o que mudou em relação ao anterior)
+o comando GIT DIFF é similar ao FC e mostra a diferença entre 2 commits Ex: gif diff ID1 ID2
+o GIT pode salvar em repositorios, esse recurso é usado para salvar arquivos dependendetes juntos Ex: Html/css, Java/XML, C#/XAML
+o repositorio é salvo por inteiro, mesmo que um dos arquivos que o componho não tenha sofrido alteração
+para visualizar quais arquivos foram alterados e o tamanho da alteração podemos usar o comando GIT LOG --STAT
+-No Git
+um pouco confuso a principio, e um conceito novo e preciso de adaptacao
+aprendi o comando GIT CLONE que serve pra copiar todo um repositorio de um endereco (no exemplo usei um endereco web https, nao sei bem que tipos posso usar, acho que ele copia pro diretorio em que o git esta) Ex: clone https:/github...
+aprendi o comando GIT CHECKOUT, com o id de um commit mais antido consigo restaurar uma versanterior, parece ser um arquivo so, as versoes ficam no GIT, entao quando uso o checkout o mesmo arquivo se transforma na versao mais antiga
+^e os commits mais recentes nao aparecem mais no GIT LOG, o commit do checkout se torna a HEAD, posso dar um checkout novamente no ID da antiga HEAD para voltar a versao mais recente, se n souber o ID tem outra forma, so n sei ainda :/ 
+configurei o gif pelo seu proprio menu, baixei e movi para a pasta mae um arquivo pra ativar o auto completar do bash, um arquivo pra fazer algo no propmt e um arquivo profile com algumas preferencias da Caroline.
+configurei o Bash para usar o Sublime como editor de texto padrão, para abrir um novo Sublime e esperar ale abrir antes do Bash continuar
+CD ~ navega para a pasta mãe que no meu caso é c:/Users/mattp
+MV move arquivos de uma pasta para outra, pode ser especificado um novo nome e o local para ser movido, não precisa estar com o bash na pasta de origem Ex: mv Documents/teste.txt chavesGoogle.txt (no exemplo n especifiquei o destino, entao
+^ vai para a pasta mão)
+
+-Pergunta da aula
+Como a visualização de um diff entre duas versões de um arquivo ajuda você a ver o bug que foi introduzido?
+R: O diff compara os 2 arquivos e aponta a diferença entre eles, se o bug foi introduzido apenas na nova versão, o problema deve estar na diferença dos arquivos, podemos dizer isso desconsiderando eventuais falhas de servidor ou cliente.
+Como ter fácil acesso a todo o histórico de um arquivo pode torná-lo um programador mais eficiente no longo prazo?
+R: Facilitando a busca por bugs, melhorando a compreensão em equipe e organizando os meus projetos.
+Na sua opinião, quais são os prós e contras de escolher manualmente quando criar um commit, como ocorre no Git, v. o salvamento automático de versões, como no Google Docs?
+R: No salvamento manual os commits podem ser feitos exatamente depois de mudanças lógicas e estruturais pontuais, eles também tem mais clareza por conta do comentário do usuário, a única desvantagem seria a suscetibilidade à erros humanos.
+Por que você acha que alguns sistemas de controle de versão, como o Git, permitem salvar vários arquivos em um commit, enquanto outros, como o Google Docs, tratam cada arquivo separadamente?
+R: Porque os sistemas como o GIT tem como foco a programação, arquivos de programação frequentemente apresentam uma relação fundamental entre si
+Como usar os comandos git log e git diff para visualizar o histórico dos arquivos?
+R: O git log mostra todos os commits, voce precisa estar no diretorio certo, com o git log vc consegue o id dos commits e pode usa-los no git diff para ver as diferenças
+De que modo o controle de versão pode dar a você mais segurança para fazer alterações que podem danificar algo?
+R: Salvando commits antigos e proporcionando operacoes de restauracao como o GIT CHECKOUT
+Agora que você já configurou a sua área de trabalho, você quer usar o Git para quê?
+R: Para ter mais controle e organização dos meus apps de Android, também quero usar o Git pra arriscar mais em mudanças de código.
+
+Lesson 2
+-A criação da pasta GIT é feita pelo comando GIT INIT dentro da pasta que se quer criar, pode ter aqrquivos ou não
+-A criação da pasta GIT não gera nenhum commit automatico
+-O GIT ADD coloca o arquivo na area de espera, voce pode colocar mais de uma arquivo nessa area para depois dar commit junto!
+
+LESSON 1 commands
+CD - navega
+MKDIR -cria pasta
+START -inicia exe
+FC - compara arquivos
+MV - move arquivo
+/
+GIT LOG - mostra lista de commits
+GIT DIFF - compara commits
+GIT CLONE - clona pasta GIT
+GIT CHECKOUT - muda a versão do arquivo
+
+LESSON 2 commands
+LS - mostra os arquivos na pasta
+LS -A -mostra os arquivos na pasta, inclusive os ocultos
+GIT INIT - inicia um arquivo .GIT para salvar versões antigas
+GIT STATUS - mostra os arquivos que estão trackiados e que estão na area de espera
+GIT ADD - adiciona o arquivo a area de espera
+GIT COMMIT - cria o commit com o arquivo(s) que estão na area de espera(staging area)
