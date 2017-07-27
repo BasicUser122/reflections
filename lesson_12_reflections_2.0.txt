@@ -70,3 +70,19 @@ GIT INIT - inicia um arquivo .GIT para salvar versões antigas
 GIT STATUS - mostra os arquivos que estão trackiados e que estão na area de espera
 GIT ADD - adiciona o arquivo a area de espera
 GIT COMMIT - cria o commit com o arquivo(s) que estão na area de espera(staging area)
+GIT DIFF(sem ids) - compara working area com staging area (arquivo ao vivo com a area de espera GOT ADD)
+GIT --staged - compara staging area com o commit mais recente
+GIT DIFF ID ID - compara 2 commits
+GIT CHECKOUT MASTER - faz o checkout do commit mais atual
+GIT RESET --HARD - reseta as mudanças do working directory e da staging area
+GIT BRANCHES(sem args) - mostra os branches que tem e mostra em verde o que esta selecionado
+GIT BRANCH x - cria um novo branch chamado x
+GIT CHECKOUT x - muda o branch para o x
+GIT REFLOG - mostra as ultimas alteracoes de checkout, bom pra recuperar um commit recente que ficou sem branch
+GIT LOG --GRAPH --ONELINE BRANCH1 BRANCH2 - mostra um grafico com as branchs e onde houve desvios no masters
+GIT CHECKOUT -B x - equivale a (GIT BRANCH x + GIT CHECKOUT x), se você estiver em headless state, em um commit que não está em nenhum branch, voce pode usar esse comanda para criar um branch
+e adicionar o commit headless a ele! No caso branch x.
+GIT MERGE X Y - você precisa estar no branch x(git checkout x), usando esse comando voce merge os 2 branchs e cria um commit novo para isso, a partir desse momento todos os commits de y são disponiveis no GIT LOG de x,
+você então pode deletar o branch y, lembrando que isso não deleta os commits de y mas apenas o label y. No log do novo branch x você terá os commits de x e y ordenados por data de criação, eles podem estar intercalados
+GIT MERGE -Y - deleta o branch y, quando você deleta o branch você não deleta os commits, se eles estiverem apenas no branch deletado eles ficam no estado headless e serão perdidos eventualmente
+GIT SHOW ID(commit) - mostra o GIT DIFF entre o commit do ID e o seu parente, util quando você fez um merge e o log está misturado!
